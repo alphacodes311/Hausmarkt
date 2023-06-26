@@ -5,8 +5,12 @@
     <h1>Create an account</h1>
     <form @submit.prevent="submitForm">
       <div class="form-group">
-        <label for="full-name">Full Name</label>
-        <input type="text" id="full-name" v-model="fullName" required>
+        <label for="first-name">First Name</label>
+        <input type="text" id="first-name" v-model="firstName" required>
+      </div>
+      <div class="form-group">
+        <label for="last-name">Last Name</label>
+        <input type="text" id="last-name" v-model="lastName" required>
       </div>
       <div class="form-group">
         <label for="email">Email Address</label>
@@ -74,7 +78,8 @@ import axios from 'axios';
 export default {
   data() {
     return {
-      fullName: '',
+      firstName: '',
+      lastName: '',
       email: '',
       password: '',
       confirmPassword: '',
@@ -89,21 +94,46 @@ export default {
       }
 
       const data = {
-        fullName: this.fullName,
+        firstName: this.firstName,
+        lastName: this.lastName,
         email: this.email,
         password: this.password
       };
 
-      try {
-        const response = await axios.post('/api/register', data);
-        alert("register")
-        console.log(response.data);
-        // Redirect to the login page
-        this.$router.push('/login');
-      } catch (error) {
-        console.error(error);
-        this.errors.push('An error occurred while registering. Please try again later.');
-      }
+      // try {
+      //   const response = await axios.post('http://127.0.0.1:8080/api/v1/register/user', data);
+      //   //alert("register")
+      //   console.log(response.data);
+      //
+      //   // Redirect to the login page
+      //   this.$router.push('/login');
+      // } catch (error) {
+      //   console.error(error);
+      //   this.errors.push('An error occurred while registering. Please try again later.');
+      // }
+      axios.post('http://127.0.0.1:8080/api/v1/register/user', data)
+        .then(response => {
+          // Handle the response data here
+          console.log(response.data);
+        })
+        .catch(error => {
+          // Check if error object exists and handle the error response
+          if (error.response) {
+            console.error(error.response.data);
+            console.error(error.response.status);
+            console.error(error.response.headers);
+          } else if (error.request) {
+            // The request was made, but no response was received
+            console.error(error.request);
+          } else {
+            // Something happened in setting up the request that triggered an Error
+            console.error('Error', error.message);
+          }
+          console.error(error.config);
+        });
+
+
+
     }
   }
 };

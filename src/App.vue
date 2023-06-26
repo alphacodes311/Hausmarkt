@@ -15,10 +15,6 @@ import EmailRegister from './components/registration/EmailRegister.vue'
     </div>
   </header>
 
-<!--  <main>-->
-<!--    <TheWelcome />-->
-<!--  </main>-->
-
   <main>
     <EmailRegister/>
   </main>
