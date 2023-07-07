@@ -2,7 +2,7 @@
 import HelloWorld from './components/HelloWorld.vue'
 //import TheWelcome from './components/TheWelcome.vue'
 import EmailRegister from './components/registration/EmailRegister.vue'
-//import ShortcutRegister from './components/registration/ShortcutRegister.vue'
+import SearchLanding from "@/components/searchPage/searchLanding.vue";
 
 </script>
 
@@ -11,12 +11,12 @@ import EmailRegister from './components/registration/EmailRegister.vue'
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="YoY!" />
+      <HelloWorld msg="First Landing Page- YoY!" />
     </div>
   </header>
 
   <main>
-    <EmailRegister/>
+    <SearchLanding/>
   </main>
 
 
