@@ -45,6 +45,7 @@ export default defineComponent({
       console.log('Search button clicked');
       console.log('Text input:', this.textInput);
       console.log('Selected option:', this.selectedOption);
+      this.$router.push('/search');
     },
 
   },
