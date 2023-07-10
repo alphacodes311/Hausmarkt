@@ -17,7 +17,7 @@ export default defineComponent({
   },
   data() {
     return {
-      textInput: 'Pallavi'
+      textInput: 'Pallav'
     };
   },
   methods: {
