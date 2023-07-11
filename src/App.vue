@@ -1,20 +1,20 @@
-<script setup>
-</script>
-
 <template>
-<!--  <header>-->
-<!--    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />-->
+  <div id="app">
+    <Toolbar />
 
-<!--    <div class="wrapper">-->
-<!--      <HelloWorld msg="First Landing Page- YoY!" />-->
-<!--&lt;!&ndash;      Add the common top bar&ndash;&gt;-->
-<!--    </div>-->
-<!--  </header>-->
-
-  <main>
-    <router-view></router-view>
-  </main>
+    <main>
+      <!-- Your page content goes here -->
+      <router-view></router-view>
+    </main>
+  </div>
 </template>
 
-<style scoped>
-</style>
+<script>
+import Toolbar from './assets/Toolbar.vue';
+
+export default {
+  components: {
+    Toolbar,
+  },
+};
+</script>
