@@ -1,4 +1,6 @@
 <template>
+
+  <div><searchbar /></div>
   <div class="textbox-container">
     <input v-model="textInput" class="text-input" type="text" @input="fetchData" />
     <button @click="search" class="search-button">Search</button>
@@ -8,16 +10,18 @@
 
 <script lang="ts">
 import { defineComponent, ref} from 'vue';
-import DropdownSelector from "@/assets/CustomDropdown.vue";
+import DropdownSelector from "@/components/CustomDropdown.vue";
+import Searchbar from "@/components/Searchbar.vue";
 
 export default defineComponent({
   name: 'ComponentSearchPage',
   components: {
+    Searchbar,
     DropdownSelector,
   },
   data() {
     return {
-      textInput: 'Pallav'
+      textInput: 'Pallavi'
     };
   },
   methods: {

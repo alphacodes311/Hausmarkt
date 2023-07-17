@@ -91,7 +91,7 @@ export default defineComponent({
   height: 8px;
   border-top: 2px solid #000;
   border-right: 2px solid #000;
-  transform: rotate(45deg);
+  transform: rotate(135deg);
   margin-left: 5px;
 }
 

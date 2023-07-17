@@ -1,0 +1,12 @@
+DESIGN SYSTEM in future:
+
+1. Dropdowns
+   - bullet point + min/ max option
+   - selector option
+   - checkbox
+   - calendar
+   -
+
+2. Icons
+    - sorting two way arrow
+    - bell icon

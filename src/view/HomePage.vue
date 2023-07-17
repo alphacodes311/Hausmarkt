@@ -18,7 +18,7 @@
 
 <script lang="ts">
 import { defineComponent, ref} from 'vue';
-import DropdownSelector from "@/assets/CustomDropdown.vue";
+import DropdownSelector from "@/components/CustomDropdown.vue";
 
 export default defineComponent({
   name: 'TextBoxContainer',

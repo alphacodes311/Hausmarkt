@@ -1,7 +1,7 @@
 // router.ts
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
-import SearchPage from '@/components/search/SearchPage.vue';
-import HomePage from '@/components/search/HomePage.vue';
+import SearchPage from '@/view/SearchPage.vue';
+import HomePage from '@/view/HomePage.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
