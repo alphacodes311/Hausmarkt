@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { defineComponent, ref} from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
   name: 'DropdownSelector',
@@ -42,23 +42,21 @@ export default defineComponent({
       this.isDropdownOpen = !this.isDropdownOpen;
     },
     selectOption(option) {
-      // alert('1')
       this.selectedOption = option;
       this.isDropdownOpen = false;
     },
     handleClickOutside(event) {
-      // alert('2')
       const dropdownElement = this.$el;
       if (!dropdownElement.contains(event.target)) {
         this.isDropdownOpen = false;
       }
     },
   },
-   mounted() {
-      document.addEventListener('click', this.handleClickOutside);
+  mounted() {
+    document.addEventListener('click', this.handleClickOutside);
   },
   beforeUnmount() {
-      document.removeEventListener('click', this.handleClickOutside);
+    document.removeEventListener('click', this.handleClickOutside);
   },
 });
 </script>

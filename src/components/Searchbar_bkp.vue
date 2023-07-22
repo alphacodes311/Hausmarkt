@@ -4,12 +4,13 @@
       <nav class="navbar">
         <div class="navbar-left">
           <input v-model="location" class="text-input" type="text" @input="onLocationChange" placeholder="Search for a city..." />
-          <DropdownSelector :options="priceOptions" :defaultOption="selectedPrice"/>
+          <DropdownSelector :options="priceOptions" :defaultOption="selectedPrice" v-model="selectedPrice" />
           <DropdownSelector :options="bedsOptions" :defaultOption="selectedBed" />
           <DropdownSelector :options="houseTypeOptions" :defaultOption="selectedType" />
           <DropdownSelector :options="lifestyleOptions" :defaultOption="selectedLifestyle" />
-          <DatepickerDropdown/>
+          <DropdownSelector :options="calendar" :defaultOption="selectedDate" />
           <DropdownSelector :options="moreOptions" :defaultOption="moreOption" />
+
         </div>
         <div class="navbar-right">
           <a href="#" align="right">Sort</a>
@@ -20,8 +21,8 @@
     <div>
       <li></li>
     </div>
-    <div>
-    </div>
+
+<!--    <div id="map" style="height: 400px;"></div>-->
 
   </div>
 </template>
@@ -29,7 +30,8 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import DropdownSelector from "@/components/CustomDropdown.vue";
-import DatepickerDropdown from "@/components/DatepickerDropdown.vue";
+import Dropdowntest from '@/components/DatepickerDropdown.vue';
+
 
 const location = ref('');
 const priceOptions = ref(['$2,000', '$2,500', '$3,000', '$4,000', '$5,000', '$9,000']);
@@ -40,6 +42,8 @@ const houseTypeOptions = ref(['Apartments', 'Houses', 'Condos', 'WB']);
 const selectedType = ref('Type');
 const lifestyleOptions = ref(['Student', 'Senior Housing', 'Short Term', 'WBS']);
 const selectedLifestyle = ref('Lifestyle');
+const calendar = ref(['1', '2', '3']);
+const selectedDate = ref('Move-In-Date');
 const moreOptions = ref(['Popup', 'opo']);
 const moreOption = ref('More');
 
@@ -109,8 +113,7 @@ onMounted(() => {
 <style>
  .searchbar {
     padding: 10px; /* Adjust the initial padding size as needed */
-    background-color: #80808040;
-    z-index: 1000;
+   background-color: #80808040;
   }
 
   @media screen and (max-width: 600px) {

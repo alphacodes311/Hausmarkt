@@ -1,23 +1,20 @@
 <template>
   <div id="app">
-
-    <Toolbar />
+    <Toolbar /> <!--This is fixed header for all the paged-->
 
     <main>
       <!-- Your page content goes here -->
       <router-view></router-view>
     </main>
-
   </div>
 </template>
 
-<script>
+<script setup>
+import { ref, provide} from 'vue';
 import Toolbar from './components/Toolbar.vue';
-import Searchbar from './components/Searchbar.vue';
+import google from 'googlemaps';
 
-export default {
-  components: {
-    Toolbar,
-  },
-};
+provide('google', google); // Provides the google object to whole application
+
+
 </script>

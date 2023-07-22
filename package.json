@@ -9,12 +9,16 @@
   },
   "dependencies": {
     "@types/vue-router": "^2.0.0",
+    "@vue/runtime-dom": "^3.3.4",
+    "@vuepic/vue-datepicker": "^5.4.0",
     "axios": "^1.4.0",
     "vue": "^3.2.47",
     "vue-router": "^4.2.4"
   },
   "devDependencies": {
+    "@types/googlemaps": "^3.43.3",
     "@vitejs/plugin-vue": "^4.0.0",
+    "googlemaps": "^0.1.5",
     "vite": "^4.1.4"
   }
 }
