@@ -13,7 +13,7 @@
         <div class="col-auto">
           <div class="avatar avatar-xl position-relative">
             <img
-              src="@/assets/img/bruce-mars.jpg"
+              src="@/design/img/bruce-mars.jpg"
               alt="profile_image"
               class="shadow-sm w-100 border-radius-lg"
             />
@@ -563,21 +563,21 @@ import ProfileInfoCard from "./components/ProfileInfoCard.vue";
 import DefaultProjectCard from "./components/DefaultProjectCard.vue";
 import MaterialSwitch from "@/components/MaterialSwitch.vue";
 import MaterialAvatar from "@/components/MaterialAvatar.vue";
-import sophie from "@/assets/img/kal-visuals-square.jpg";
-import marie from "@/assets/img/marie.jpg";
-import ivana from "@/assets/img/ivana-square.jpg";
-import peterson from "@/assets/img/team-4.jpg";
-import nick from "@/assets/img/team-3.jpg";
-import img1 from "@/assets/img/home-decor-1.jpg";
-import img2 from "@/assets/img/home-decor-2.jpg";
-import img3 from "@/assets/img/home-decor-3.jpg";
-import team1 from "@/assets/img/team-1.jpg";
-import team2 from "@/assets/img/team-2.jpg";
-import team3 from "@/assets/img/team-3.jpg";
-import team4 from "@/assets/img/team-4.jpg";
+import sophie from "@/design/img/kal-visuals-square.jpg";
+import marie from "@/design/img/marie.jpg";
+import ivana from "@/design/img/ivana-square.jpg";
+import peterson from "@/design/img/team-4.jpg";
+import nick from "@/design/img/team-3.jpg";
+import img1 from "@/design/img/home-decor-1.jpg";
+import img2 from "@/design/img/home-decor-2.jpg";
+import img3 from "@/design/img/home-decor-3.jpg";
+import team1 from "@/design/img/team-1.jpg";
+import team2 from "@/design/img/team-2.jpg";
+import team3 from "@/design/img/team-3.jpg";
+import team4 from "@/design/img/team-4.jpg";
 
-import setNavPills from "@/assets/js/nav-pills.js";
-import setTooltip from "@/assets/js/tooltip.js";
+import setNavPills from "@/design/js/nav-pills.js";
+import setTooltip from "@/design/js/tooltip.js";
 
 export default {
   name: "profile-overview",

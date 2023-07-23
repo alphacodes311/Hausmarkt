@@ -53,7 +53,7 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import '@/assets/searchBoard.css';
+@import '@/design/searchBoard.css';
 </style>
 
 

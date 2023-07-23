@@ -9,7 +9,7 @@
           <DropdownSelector :options="houseTypeOptions" :defaultOption="selectedType" />
           <DropdownSelector :options="lifestyleOptions" :defaultOption="selectedLifestyle" />
           <DatepickerDropdown/>
-          <DropdownSelector :options="moreOptions" :defaultOption="moreOption" />
+          <DropdownSelector :defaultOption="more" />
         </div>
         <div class="navbar-right">
           <a href="#" align="right">Sort</a>
@@ -18,16 +18,13 @@
       </nav>
     </div>
     <div>
-      <li></li>
+      <!-- Add your other content here -->
     </div>
-    <div>
-    </div>
-
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import DropdownSelector from "@/components/CustomDropdown.vue";
 import DatepickerDropdown from "@/components/DatepickerDropdown.vue";
 
@@ -40,70 +37,9 @@ const houseTypeOptions = ref(['Apartments', 'Houses', 'Condos', 'WB']);
 const selectedType = ref('Type');
 const lifestyleOptions = ref(['Student', 'Senior Housing', 'Short Term', 'WBS']);
 const selectedLifestyle = ref('Lifestyle');
-const moreOptions = ref(['Popup', 'opo']);
-const moreOption = ref('More');
-
-let map: any = null;
-const markers: any[] = [];
-let autocompleteService: google.maps.places.AutocompleteService;
-
-//Move all the Map functions in another page
-function initMap() {
-  map = new google.maps.Map(document.getElementById('map'), {
-    center: { lat: -34.397, lng: 150.644 },
-    zoom: 8,
-  });
-  autocompleteService = new google.maps.places.AutocompleteService();
-}
-
-function searchPlaces() {
-  const request = {
-    input: location.value,
-    types: ['(cities)'], // Restrict to cities
-  };
-
-  autocompleteService.getPlacePredictions(request, (results: any[], status: any) => {
-    if (status === google.maps.places.PlacesServiceStatus.OK && results) {
-      // Log the list of predictions
-      console.log(results);
-    }
-  });
-}
-
-function clearMarkers() {
-  for (let i = 0; i < markers.length; i++) {
-    markers[i].setMap(null);
-  }
-  markers.length = 0;
-}
-
-function onLocationChange() {
-  if (location.value) {
-    // Search for places
-    searchPlaces();
-  } else {
-    // Clear the map when the location is empty
-    clearMarkers();
-  }
-}
-
-onMounted(() => {
-  // Load the Google Maps API here since there's no separate index.html
-  const script = document.createElement('script');
-  script.src = `https://maps.googleapis.com/maps/api/js?key=&libraries=places`;
-  script.onload = () => {
-    // Assign the global `google` object to the locally imported `google` variable
-    // to make it recognized in this scope
-    google = window.google;
-    initMap();
-    // Optionally, search for places immediately if there's a default location
-    if (location.value) {
-      searchPlaces();
-    }
-  };
-  document.head.appendChild(script);
-});
+const more = ref('More');
 </script>
+
 
 
 <style>

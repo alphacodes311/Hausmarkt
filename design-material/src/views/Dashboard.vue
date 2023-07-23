@@ -240,16 +240,16 @@ import MiniStatisticsCard from "./components/MiniStatisticsCard.vue";
 import ProjectCard from "./components/ProjectCard.vue";
 import TimelineList from "@/examples/Cards/TimelineList.vue";
 import TimelineItem from "@/examples/Cards/TimelineItem.vue";
-import logoXD from "@/assets/img/small-logos/logo-xd.svg";
-import logoAtlassian from "@/assets/img/small-logos/logo-atlassian.svg";
-import logoSlack from "@/assets/img/small-logos/logo-slack.svg";
-import logoSpotify from "@/assets/img/small-logos/logo-spotify.svg";
-import logoJira from "@/assets/img/small-logos/logo-jira.svg";
-import logoInvision from "@/assets/img/small-logos/logo-invision.svg";
-import team1 from "@/assets/img/team-1.jpg";
-import team2 from "@/assets/img/team-2.jpg";
-import team3 from "@/assets/img/team-3.jpg";
-import team4 from "@/assets/img/team-4.jpg";
+import logoXD from "@/design/img/small-logos/logo-xd.svg";
+import logoAtlassian from "@/design/img/small-logos/logo-atlassian.svg";
+import logoSlack from "@/design/img/small-logos/logo-slack.svg";
+import logoSpotify from "@/design/img/small-logos/logo-spotify.svg";
+import logoJira from "@/design/img/small-logos/logo-jira.svg";
+import logoInvision from "@/design/img/small-logos/logo-invision.svg";
+import team1 from "@/design/img/team-1.jpg";
+import team2 from "@/design/img/team-2.jpg";
+import team3 from "@/design/img/team-3.jpg";
+import team4 from "@/design/img/team-4.jpg";
 export default {
   name: "dashboard-default",
   data() {

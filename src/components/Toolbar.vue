@@ -4,6 +4,7 @@
       <ul>
         <li><a href="/">Home</a></li>
         <li><a href="/search">Search</a></li>
+        <li><a href="/rentProperty">Rent</a></li>
         <!-- Add more navigation links as needed -->
       </ul>
     </nav>

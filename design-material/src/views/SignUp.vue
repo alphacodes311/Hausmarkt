@@ -24,7 +24,7 @@
                   :style="{
                     backgroundImage:
                       'url(' +
-                      require('@/assets/img/illustrations/illustration-signin.jpg') +
+                      require('@/design/img/illustrations/illustration-signin.jpg') +
                       ')',
                   }"
                 ></div>

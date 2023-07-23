@@ -1,6 +1,16 @@
 <template>
 
   <div><searchbar /></div>
+  <div class="content">
+      <div class="container">
+        <!-- Add your content for the left container here -->
+        <h2>Left Container</h2>
+      </div>
+      <div class="container">
+        <!-- Add your content for the right container here -->
+        <h2>Right Container</h2>
+      </div>
+    </div>
 
 </template>
 
@@ -37,7 +47,17 @@ export default defineComponent({
 </script>
 
 <style scoped>
-@import '@/assets/searchBoard.css';
+@import '@/design/searchBoard.css';
+
+.content {
+  display: flex;
+}
+
+.container {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid #ccc;
+}
 </style>
 
 

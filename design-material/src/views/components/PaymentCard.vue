@@ -21,7 +21,7 @@
           >
             <img
               class="w-10 me-3 mb-0"
-              src="@/assets/img/logos/mastercard.png"
+              src="@/design/img/logos/mastercard.png"
               alt="logo"
             />
             <h6 class="mb-0">
@@ -45,7 +45,7 @@
           >
             <img
               class="w-10 me-3 mb-0"
-              src="@/assets/img/logos/visa.png"
+              src="@/design/img/logos/visa.png"
               alt="logo"
             />
             <h6 class="mb-0">
@@ -70,8 +70,8 @@
 
 <script>
 import MaterialButton from "@/components/MaterialButton.vue";
-import img1 from "@/assets/img/logos/mastercard.png";
-import img2 from "@/assets/img/logos/visa.png";
+import img1 from "@/design/img/logos/mastercard.png";
+import img2 from "@/design/img/logos/visa.png";
 
 export default {
   name: "payment-card",

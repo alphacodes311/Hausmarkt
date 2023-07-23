@@ -16,50 +16,59 @@
   </div>
 </template>
 
-<script>
-import { defineComponent, ref } from 'vue';
+<script setup>
+import { ref, onMounted, watch } from 'vue';
 
-export default defineComponent({
-  name: 'DropdownSelector',
-  props: {
-    options: {
-      type: Array,
-      required: true,
-    },
-    defaultOption: {
-      type: String,
-      default: '',
-    },
-  },
-  data() {
-    return {
-      selectedOption: this.defaultOption,
-      isDropdownOpen: false,
-    };
-  },
-  methods: {
-    toggleDropdown() {
-      this.isDropdownOpen = !this.isDropdownOpen;
-    },
-    selectOption(option) {
-      this.selectedOption = option;
-      this.isDropdownOpen = false;
-    },
-    handleClickOutside(event) {
-      const dropdownElement = this.$el;
-      if (!dropdownElement.contains(event.target)) {
-        this.isDropdownOpen = false;
-      }
-    },
-  },
-  mounted() {
-    document.addEventListener('click', this.handleClickOutside);
-  },
-  beforeUnmount() {
-    document.removeEventListener('click', this.handleClickOutside);
-  },
-});
+const props = defineProps(['options', 'defaultOption']);
+
+const selectedOption = ref(props.defaultOption);
+const isDropdownOpen = ref(false);
+const isPopupOpen = ref(false);
+
+const toggleDropdown = () => {
+  isDropdownOpen.value = !isDropdownOpen.value;
+};
+
+const selectOption = (option) => {
+  selectedOption.value = option;
+  isDropdownOpen.value = false;
+};
+
+const handleClickOutside = (event) => {
+  const dropdownElement = document.querySelector('.dropdown-selector');
+  if (dropdownElement && !dropdownElement.contains(event.target)) {
+    isDropdownOpen.value = false;
+  }
+};
+
+const openPopup = () => {
+  isPopupOpen.value = true;
+};
+
+const closePopup = () => {
+  isPopupOpen.value = false;
+};
+
+const emitOpenPopupEvent = () => {
+  // Emit the event when the "More" option is clicked
+  emit('openPopup');
+
+  onMounted(() => {
+    document.addEventListener('click', handleClickOutside);
+  });
+
+  watch(isPopupOpen, (newValue) => {
+    if (!newValue) {
+      isDropdownOpen.value = false;
+    }
+  });
+
+  onUnmounted(() => {
+    document.removeEventListener('click', handleClickOutside);
+  });
+}
 </script>
+
 
 <style scoped>
 .dropdown-selector {

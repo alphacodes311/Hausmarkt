@@ -3,7 +3,7 @@
     <div
       class="overflow-hidden position-relative border-radius-xl"
       :style="{
-        backgroundImage: 'url(' + require('@/assets/img/curved14.jpg') + ')',
+        backgroundImage: 'url(' + require('@/design/img/curved14.jpg') + ')',
       }"
     >
       <span class="mask" :class="`bg-gradient-${card.background}`"></span>
