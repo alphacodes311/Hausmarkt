@@ -67,6 +67,8 @@ const emitOpenPopupEvent = () => {
     document.removeEventListener('click', handleClickOutside);
   });
 }
+
+// TODO add option to close the if click outside
 </script>
 
 
@@ -74,6 +76,7 @@ const emitOpenPopupEvent = () => {
 .dropdown-selector {
   position: relative;
   display: inline-block;
+  z-index: 1000;
 }
 
 .dropdown {
@@ -128,4 +131,5 @@ const emitOpenPopupEvent = () => {
   gap: 5px;
   margin-bottom: 5px;
 }
+
 </style>
